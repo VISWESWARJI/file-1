@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">  
+<title>JavaScript Field Label Form Validation using a registration form</title>  
+<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />  
+<meta name="description" content="This document is an example of JavaScript Field label form validation using a sample registration form. " />  
+<link rel='stylesheet' href='../css/style.css' type='text/css' />  
+<script src="../js/valid.js.js"></script>  
+	
+	
+	
+	<style>
+		form ol{float: auto}
+		body{background-color:green }
+	</style>
+<script>
+	function validateForm()
+	{
+	var x=document.forms["myForm"]["myname"].value;
+	if (x==null || x=="")
+ 	 {
+ 	 alert("First name must be filled out");
+ 	 return false;
+ 	 }
+	}
+	function num()
+	{
+		var val = document.getElementById("numb").value;
+		var elem = document.getElementById("demo");
+		if (val == "" || isNaN(val))
+		{	
+			elem.innerHTML = "Not a Nubmer";
+		}
+		else
+		{
+			elem.innerHTML = "Given Input is a Number";
+		}
+	}
+</script>
+
+</head>
+
+<body>
+	<br><br><br><br>
+	<ol>
+	<form name="myForm" action="demo.js" onsubmit="return validateForm()" method="post">
+	<li>Enter your First name: <input type="text" name="myname"></li><br>
+	<li>Enter your Last name: <input type="text" name="myname"></li><br>
+	<input type="submit" value="Submit"><br>
+	<li><input type="radio" name="sex" value="male">Male</li> <br>
+	<li><input type="radio" name="sex" value="female">Female</li><br>
+	<li><input type="checkbox" name="##" value="#">If u r male mark here</li><br>
+	<li><input type="checkbox" name="##" value="#">If u r female mark here</li><br>
+	<li>Email Id :<input type="email" name="mymail"></li><br>
+	<input type="submit" value="submit"><br>
+	
+	</form>
+	
+	<li><p>please input a number</p></li>
+	<input id="numb" type="text">
+	<button type="button" onclick="num()">Click Here</button>
+	<li><p id="demo"></p></li>
+	<label for="desc">About [Optional] :</label><br> 
+	<textarea name="desc" id="desc"></textarea>
+	</ol>
+</body>
+
+</html>
